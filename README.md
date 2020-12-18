@@ -329,7 +329,11 @@ services.AddSwaggerForOcelot(Configuration,
   });
 ```
 
-### Control downstream to swagger api
+### If none of this is enough
+
+🙏 Feel free to provide a PR with implementation of your scenario. You will probably help many others.
+
+## Control downstream to swagger api
 With the `ISwaggerDownstreamInterceptor` interface you are able to inject your own logic to control the downstream.
 
 1. In the ConfigureServices method of Startup.cs, register your downstream interceptor along with your other dependencies.
@@ -364,12 +368,8 @@ public class PublishedDownstreamInterceptor : ISwaggerDownstreamInterceptor
 }
 ```
 
-Note, the service is still visible in the swagger ui the response is only visible in the request to the downstream url.
+> The service is still visible in the swagger ui the response is only visible in the request to the downstream url.
 If you want to control the visibility of the endpoints as well you have to implement a custom swagger ui.
-
-### If none of this is enough
-
-🙏 Feel free to provide a PR with implementation of your scenario. You will probably help many others.
 
 ## Merging configuration files
 
